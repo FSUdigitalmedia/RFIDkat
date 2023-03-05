@@ -154,5 +154,43 @@ void loop()
     }
   }
 
+  // turn off white LEDs if necessary
+  if (whiteLED1IsOn && millis() - whiteLED1TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED1PIN, LOW);
+    whiteLED1IsOn = false;
+  }
+  if (whiteLED2IsOn && millis() - whiteLED2TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED2PIN, LOW);
+    whiteLED2IsOn = false;
+  }
+  if (whiteLED3IsOn && millis() - whiteLED3TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED3PIN, LOW);
+    whiteLED3IsOn = false;
+  }
+  if (whiteLED4IsOn && millis() - whiteLED4TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED4PIN, LOW);
+    whiteLED4IsOn = false;
+  }
+  if (whiteLED5IsOn && millis() - whiteLED5TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED5PIN, LOW);
+    whiteLED5IsOn = false;
+  }
+  if (whiteLED6IsOn && millis() - whiteLED6TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED6PIN, LOW);
+    whiteLED6IsOn = false;
+  }
+  if (whiteLED7IsOn && millis() - whiteLED7TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED7PIN, LOW);
+    whiteLED7IsOn = false;
+  }
+  if (whiteLED8IsOn && millis() - whiteLED8TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED8PIN, LOW);
+    whiteLED8IsOn = false;
+  }
+  if (whiteLED9IsOn && millis() - whiteLED9TurnedOnTime >= whiteLEDDuration) {
+    digitalWrite(WHITELED9PIN, LOW);
+    whiteLED9IsOn = false;
+  }
+
 
 }
