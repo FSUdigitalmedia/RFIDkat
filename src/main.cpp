@@ -27,8 +27,8 @@ boolean bone3Read = false;
 
 unsigned long greenLEDDuration = 500;
 unsigned long whiteLEDDuration = 3000;
-
 unsigned long greenLEDTurnedOnTime = 0;
+boolean greenLEDIsOn = false;
 
 String card1ID = "74 ED DB 03";
 String card2ID = "74 ED DB 04";
@@ -89,21 +89,33 @@ void loop()
   // read the ID of the card into the "cardID" variable
   String readID = returnCardID();
 
+  // deal with reading CARDs
   if (readID.equals(card1ID)) {
     card1Read = true;
     digitalWrite(GREENLEDPIN,HIGH);
+    greenLEDIsOn = true;
     greenLEDTurnedOnTime = millis();
   }
   if (readID.equals(card2ID)) {
     card2Read = true;
     digitalWrite(GREENLEDPIN,HIGH);
+    greenLEDIsOn = true;
     greenLEDTurnedOnTime = millis();
   }
   if (readID.equals(card3ID)) {
     card3Read = true;
     digitalWrite(GREENLEDPIN,HIGH);
+    greenLEDIsOn = true;
     greenLEDTurnedOnTime = millis();
   }
+
+  // turn off green LED if necessary
+  if (greenLEDIsOn && millis() - greenLEDTurnedOnTime >= greenLEDDuration) {
+    digitalWrite(GREENLEDPIN, LOW);
+    greenLEDIsOn = false;
+  }
+
+  
 
 
 }
