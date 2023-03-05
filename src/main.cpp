@@ -136,25 +136,68 @@ void loop()
   }
 
   // check the bones
-  if (readID.equals(bone1ID)) {
+  if (readID.equals(bone1ID)) { // bone 1
     if (card1Read) {
       digitalWrite(WHITELED1PIN, HIGH);
       whiteLED1IsOn = true;
       whiteLED1TurnedOnTime = millis();
+      card1Read = false;
     }
     if (card2Read) {
       digitalWrite(WHITELED4PIN, HIGH);
       whiteLED4IsOn = true;
       whiteLED4TurnedOnTime = millis();
+      card2Read = false;
     }
     if (card3Read) {
       digitalWrite(WHITELED7PIN, HIGH);
       whiteLED7IsOn = true;
       whiteLED7TurnedOnTime = millis();
+      card3Read = false;
+    }
+  }
+  if (readID.equals(bone2ID)) { // bone 2
+    if (card1Read) {
+      digitalWrite(WHITELED2PIN, HIGH);
+      whiteLED2IsOn = true;
+      whiteLED2TurnedOnTime = millis();
+      card1Read = false;
+    }
+    if (card2Read) {
+      digitalWrite(WHITELED5PIN, HIGH);
+      whiteLED5IsOn = true;
+      whiteLED5TurnedOnTime = millis();
+      card2Read = false;
+    }
+    if (card3Read) {
+      digitalWrite(WHITELED8PIN, HIGH);
+      whiteLED8IsOn = true;
+      whiteLED8TurnedOnTime = millis();
+      card3Read = false;
+    }
+  }
+  if (readID.equals(bone3ID)) { // bone 3
+    if (card1Read) {
+      digitalWrite(WHITELED3PIN, HIGH);
+      whiteLED3IsOn = true;
+      whiteLED3TurnedOnTime = millis();
+      card1Read = false;
+    }
+    if (card2Read) {
+      digitalWrite(WHITELED6PIN, HIGH);
+      whiteLED6IsOn = true;
+      whiteLED6TurnedOnTime = millis();
+      card2Read = false;
+    }
+    if (card3Read) {
+      digitalWrite(WHITELED9PIN, HIGH);
+      whiteLED9IsOn = true;
+      whiteLED9TurnedOnTime = millis();
+      card3Read = false;
     }
   }
 
-  // turn off white LEDs if necessary
+  // turn off any white LEDs if necessary
   if (whiteLED1IsOn && millis() - whiteLED1TurnedOnTime >= whiteLEDDuration) {
     digitalWrite(WHITELED1PIN, LOW);
     whiteLED1IsOn = false;
